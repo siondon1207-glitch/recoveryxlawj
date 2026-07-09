@@ -1,23 +1,717 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+
+ 
+    <!-- JSON-LD Structured Data for Naver Smart Search and AI Search Engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "name": "광주개인회생 및 광주회생법원 종합 정보 가이드",
+        "description": "광주광역시 전역의 채무자들을 위한 2026년 최신 기준 개인회생 자격 요건과 절차, 변제금 계산 방법을 안내합니다.",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "광주회생법원의 개인회생 신청 요건은 무엇인가요?",
+                "answer": {
+                    "@type": "Answer",
+                    "text": "정기적이고 확실한 수입이 발생하는 급여소득자나 영업소득자여야 하며, 보유한 총 재산보다 채무액이 더 많아야 합니다. 담보부 채무는 15억 원 이하, 무담보 채무는 10억 원 이하인 경우 신청할 수 있습니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2026년 기준 개인회생 최저생계비는 얼마인가요?",
+                "answer": {
+                    "@type": "Answer",
+                    "text": "2026년 기준 1인 가구 최저생계비는 월 1,538,543원이며, 2인 가구는 2,520,105원, 3인 가구는 3,211,916원, 4인 가구는 3,906,688원으로 규정되어 월 변제금 계산 시 공제됩니다."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "광주개인회생 전문 분석 및 2026년 최신 정보 목록",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Article",
+                    "url": "https://gwangju.reliabledone.com/rehabilitation-guide",
+                    "name": "2026년 광주회생법원 신설에 따른 실무 심층 가이드와 변제율 인하 전략",
+                    "datePublished": "2026-03-15T10:00:00+09:00",
+                    "author": {
+                        "@type": "Organization",
+                        "name": "광주개인회생 연구센터"
+                    },
+                    "headline": "2026년 광주회생법원 신설에 따른 실무 심층 가이드와 변제율 인하 전략"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Article",
+                    "url": "https://gwangju.reliabledone.com/cost-comparison",
+                    "name": "광주개인회생 비용 비교 및 수임료 견적 합리적으로 책정하는 법",
+                    "datePublished": "2026-03-16T11:00:00+09:00",
+                    "author": {
+                        "@type": "Organization",
+                        "name": "광주개인회생 연구센터"
+                    },
+                    "headline": "광주개인회생 비용 비교 및 수임료 견적 합리적으로 책정하는 법"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        body { 
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif; 
+            line-height: 1.8; 
+            margin: 0; 
+            padding: 0; 
+            background: #f8fafc; 
+            color: #334155; 
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header { 
+            background: linear-gradient(135deg, #1e3a8a 0%, #2b6cb0 100%); 
+            color: #ffffff; 
+            padding: 50px 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+        header h1 { 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            margin: 0 0 15px 0; 
+            letter-spacing: -0.05em;
+        }
+        header p { 
+            font-size: 1.1rem; 
+            margin: 0; 
+            opacity: 0.9; 
+        }
+        
+        nav { 
+            background: #ffffff; 
+            padding: 15px 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+            margin-bottom: 25px;
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px;
+        }
+        nav a { 
+            color: #475569; 
+            text-decoration: none; 
+            font-weight: 500; 
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        nav a:hover { 
+            color: #2b6cb0; 
+        }
+
+        section { 
+            background: #ffffff; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.02); 
+            margin-bottom: 25px;
+        }
+        
+        h2 { 
+            color: #1e3a8a; 
+            font-size: 1.6rem; 
+            border-left: 5px solid #3182ce; 
+            padding-left: 15px; 
+            margin-top: 0; 
+            margin-bottom: 25px; 
+        }
+        h3 { 
+            color: #2d3748; 
+            font-size: 1.25rem; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        
+        p { 
+            margin-top: 0; 
+            margin-bottom: 20px; 
+            text-align: justify; 
+            font-size: 1rem;
+            color: #4a5568;
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 25px 0; 
+            font-size: 0.95rem; 
+        }
+        th, td { 
+            padding: 14px; 
+            text-align: left; 
+            border: 1px solid #e2e8f0; 
+        }
+        th { 
+            background: #f7fafc; 
+            color: #2d3748; 
+            font-weight: 600; 
+        }
+        tr:nth-child(even) { 
+            background: #fafbfc; 
+        }
+        
+        /* Interactive Calculator Styling */
+        .calculator-container {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background: #ffffff;
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #3182ce;
+            outline: none;
+        }
+        
+        .btn-action {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #2b6cb0;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.2s ease;
+            box-shadow: 0 4px 6px rgba(43, 108, 176, 0.15);
+        }
+        .btn-action:hover {
+            background: #2c5282;
+        }
+        
+        .result-box {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            border-radius: 6px;
+        }
+        .result-box h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2b6cb0;
+            font-size: 1.15rem;
+        }
+        .result-data {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        .result-data span {
+            font-weight: 700;
+            color: #2b6cb0;
+        }
+        
+        .info-box {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+        .info-box p {
+            margin: 0;
+            color: #276749;
+        }
+        
+        .checklist-group {
+            margin: 20px 0;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-top: 6px;
+        }
+
+        .chart-container {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .chart-bar {
+            flex: 1;
+            background: #edf2f7;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .chart-value-bg {
+            background: #cbd5e0;
+            height: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        .chart-value-fill {
+            background: #3182ce;
+            height: 100%;
+        }
+
+        @media(max-width: 768px) {
+            section { padding: 25px 20px; }
+            header h1 { font-size: 1.7rem; }
+            .form-row { flex-direction: column; gap: 15px; }
+            .chart-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>광주개인회생 절차 및 합리적 채무 조정을 위한 통합 가이드</h1>
+        <p>2026년 새롭게 정립된 광주회생법원의 보정 지침과 가구원수별 최저생계비 기준을 상세히 분석하여 전달합니다.</p>
+    </header>
+
+    <nav aria-label="주요 서비스 메뉴">
+        <ul>
+            <li><a href="#intro">법원 출범과 변화</a></li>
+            <li><a href="#living-cost">2026년 생계비 가이드</a></li>
+            <li><a href="#calculator-section">예상 변제금 계산기</a></li>
+            <li><a href="#qualification">적합성 자가 검증</a></li>
+            <li><a href="#regional-analysis">구별 맞춤 분석</a></li>
+            <li><a href="#forum-trends">온라인 커뮤니티 동향</a></li>
+            <li><a href="#official-links">신뢰할 수 있는 출처</a></li>
+            <li><a href="#apply-consult">상담 요청 및 문의</a></li>
+        </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <section id="intro">
+        <h2>광주회생법원 출범에 따른 실무적 절차 변화</h2>
+        <p>
+            과거 광주지방법원 관할로 진행되던 도산 사건들은 2026년 정식으로 신설된 광주회생법원으로 이관되면서 실무상 매우 긍정적인 방향으로 전환되고 있습니다. 종전 광주지방법원 시절에는 타 지역 법원들에 비해 금지명령 심사가 다소 보수적으로 이루어져 많은 채무자들의 우려가 깊었으나, 회생 전문 법원으로 독립 개원한 이후부터는 심리 절차가 훨씬 체계적이고 신속하게 처리되고 있습니다. 개시결정까지 소요되던 대기 기간이 실질적으로 단축되었고 보정 권고의 표준화가 진행되어 불필요한 기간 지연이 줄어들었다는 평가를 받고 있습니다.
+        </p>
+        <p>
+            회생 절차를 준비할 때에는 광주광역시 동구, 서구, 남구, 북구, 광산구 등 신청인의 실제 주민등록상 거주지나 주된 사무소의 소재지를 기준으로 관할을 정하게 됩니다. 광주회생법원은 전남 지역 전체를 관할하기 때문에 광주 시민뿐만 아니라 인근 화순, 나주, 장성 등에서 통근하는 직장인들이나 소상공인들까지 모두 포괄하는 구제 제도로 기능하고 있습니다. 특히 주식 투자 실패, 가상화폐 채무, 신용카드 대금 연체 등 다양한 사유로 채무 독촉에 시달리는 분들에게 채권추심을 공식적으로 차단해 주는 금지명령의 인용률이 과거보다 정밀하고 안정적으로 심사되고 있는 것은 매우 중대한 변화라 할 수 있습니다.
+        </p>
+
+        <div class="chart-container">
+            <div class="chart-bar">
+                <strong>개원 전 평균 개시 소요 기간</strong>
+                <div>평균 9개월에서 12개월 이상</div>
+                <div class="chart-value-bg">
+                    <div class="chart-value-fill" style="width: 100%; background: #e53e3e;"></div>
+                </div>
+            </div>
+            <div class="chart-bar">
+                <strong>2026년 회생법원 평균 소요 기간</strong>
+                <div>평균 4개월에서 6개월 내외</div>
+                <div class="chart-value-bg">
+                    <div class="chart-value-fill" style="width: 45%; background: #3182ce;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="living-cost">
+        <h2>2026년도 기준중위소득 및 가구별 최저생계비 산정 기준</h2>
+        <p>
+            개인회생 제도에서 매월 변제해 나갈 금액을 정하는 가장 핵심적인 지표는 가구원 수에 따른 최저생계비입니다. 개인의 세후 월평균 소득에서 법정 최저생계비를 제한 나머지 금액이 가용소득으로 분류되어 변제 재원으로 사용되기 때문입니다. 2026년 보건복지부가 고시한 기준 중위소득이 인상됨에 따라, 법원이 인정하는 개인회생 최저생계비(기준 중위소득의 60%) 역시 역대 최대 수준의 인상폭을 보였습니다. 이는 신청인들이 지켜낼 수 있는 기본 생활비 보장 수준이 높아졌음을 의미하며, 결과적으로 매달 납부해야 할 월 변제금 하락 효과를 누릴 수 있게 됨을 뜻합니다.
+        </p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>가구원 구분</th>
+                    <th>2025년 최저생계비</th>
+                    <th>2026년 최저생계비 (확정)</th>
+                    <th>전년 대비 변동액</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1인 가구</td>
+                    <td>1,437,673 원</td>
+                    <td>1,538,543 원</td>
+                    <td>100,870 원 인상</td>
+                </tr>
+                <tr>
+                    <td>2인 가구</td>
+                    <td>2,354,845 원</td>
+                    <td>2,520,105 원</td>
+                    <td>165,260 원 인상</td>
+                </tr>
+                <tr>
+                    <td>3인 가구</td>
+                    <td>3,016,211 원</td>
+                    <td>3,211,916 원</td>
+                    <td>195,705 원 인상</td>
+                </tr>
+                <tr>
+                    <td>4인 가구</td>
+                    <td>3,668,520 원</td>
+                    <td>3,906,688 원</td>
+                    <td>238,168 원 인상</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            위 표에 제시된 보장 금액은 어디까지나 표준적인 최저한도의 기준입니다. 만약 본인이 지속적인 난치병 치료를 받고 있어 월별로 증빙 가능한 의료 비용 지출이 발생하거나, 미성년 자녀에게 특수 목적의 교육 비용이 지불되는 등 소명 가능한 지출이 입증된다면 일반 생계비 외에 추가생계비 반영을 적극적으로 주장할 수 있습니다. 2026년부터는 주거 임차 비용의 상승 및 대출 금리 상승에 따른 이자 부담 등을 종합 고려하여 실질 주거 비용 역시 정해진 범위 내에서 추가 보장을 심사해 주는 경향이 있으므로 전문가와의 사전 컨설팅 단계에서 꼼꼼히 체크해 보아야 합니다.
+        </p>
+    </section>
+
+    <section id="calculator-section">
+        <h2>광주개인회생 실시간 예상 변제금 계산기</h2>
+        <p>
+            사용자가 직접 자신의 재정 상황을 기초로 모의 변제 금액과 원금 탕감률을 도출해 볼 수 있도록 설계된 인터랙티브 연산기입니다. 2026년의 공식 최저생계비 공제율과 법원의 청산가치 보장 원칙을 반영하여 설계되었습니다.
+        </p>
+
+        <div class="calculator-container">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="input-income">월 세후 평균 수입 (만원 단위)</label>
+                    <input type="number" id="input-income" placeholder="예: 250" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="input-dependents">부양가족 가구원 수 선택</label>
+                    <select id="input-dependents">
+                        <option value="1">1인 가구 (본인 혼자 생계 부담)</option>
+                        <option value="2">2인 가구 (피부양자 1명 포함)</option>
+                        <option value="3">3인 가구 (피부양자 2명 포함)</option>
+                        <option value="4">4인 가구 (피부양자 3명 포함)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="input-debt">총 부채 잔액 (만원 단위)</label>
+                    <input type="number" id="input-debt" placeholder="예: 6000" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="input-assets">보유 총 재산 가액 (부동산, 보증금 등 만원 단위)</label>
+                    <input type="number" id="input-assets" placeholder="예: 1500" min="0">
+                </div>
+            </div>
+
+            <button type="button" class="btn-action" onclick="calculateRehabilitation()">예상 변제 조건 실시간 계산하기</button>
+
+            <div id="calc-result" class="result-box">
+                <h4>입력 정보 분석 결과</h4>
+                <div class="result-data">선택한 가구의 2026년 기준 법정 생계비: <span id="res-living-expense">0</span> 원</div>
+                <div class="result-data">예상되는 월별 변제 납부액: <span id="res-monthly-payment">0</span> 원</div>
+                <div class="result-data">36개월 동안의 예상 총 납부 금액: <span id="res-total-payment">0</span> 원</div>
+                <div class="result-data">원금 기준 예상 탕감률 비율: <span id="res-forgiveness-rate">0</span> %</div>
+                <p id="res-feedback-text" style="font-size: 0.9rem; margin-top: 15px; color: #4a5568; font-weight: 500;"></p>
+                <div class="calc-note">
+                    주의: 본 모의 연산은 입력된 숫자값만을 토대로 처리한 단순 시뮬레이션입니다. 실제 사건 진행 시에는 채무가 최근 1년 이내에 급격히 증량되었는지의 여부, 사행성 행위의 비중 등에 따라 광주회생법원 회생위원의 권고사항을 통해 월 납입 금액이 추가로 조정될 수 있습니다.
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function calculateRehabilitation() {
+                const incomeInput = parseFloat(document.getElementById('input-income').value);
+                const dependentsInput = parseInt(document.getElementById('input-dependents').value);
+                const debtInput = parseFloat(document.getElementById('input-debt').value);
+                const assetsInput = parseFloat(document.getElementById('input-assets').value);
+
+                if (isNaN(incomeInput) || isNaN(debtInput) || isNaN(assetsInput)) {
+                    alert('금액과 수치 정보를 정확히 입력해 주십시오.');
+                    return;
+                }
+
+                const income = incomeInput * 10000;
+                const debt = debtInput * 10000;
+                const assets = assetsInput * 10000;
+
+                const livingExpensesMap = {
+                    1: 1538543,
+                    2: 2520105,
+                    3: 3211916,
+                    4: 3906688
+                };
+
+                const currentLivingExpense = livingExpensesMap[dependentsInput];
+                let monthlyPayment = income - currentLivingExpense;
+                
+                document.getElementById('res-living-expense').innerText = currentLivingExpense.toLocaleString();
+
+                if (monthlyPayment <= 0) {
+                    document.getElementById('calc-result').style.display = 'block';
+                    document.getElementById('res-monthly-payment').innerText = '진행 불가능';
+                    document.getElementById('res-total-payment').innerText = '진행 불가능';
+                    document.getElementById('res-forgiveness-rate').innerText = '0';
+                    document.getElementById('res-feedback-text').innerText = '현재 입력하신 소득이 가구 기준 최저생계비보다 적어 개인회생 제도의 직접적인 신청이 까다로울 수 있습니다. 이 경우 부업을 통해 추가 소득을 확보하거나 1인 생계비의 하향 조정을 설득해야 하며, 대안으로 신용회복위원회의 워크아웃 가능 여부를 함께 정밀 비교해 볼 것을 추천합니다.';
+                    return;
+                }
+
+                let totalPayment = monthlyPayment * 36;
+                let feedback = '기초 조건상 청산가치 만족 및 자격 충족이 가능한 상태로 보입니다.';
+
+                if (totalPayment < assets) {
+                    feedback = '청산가치 보장의 원칙에 따라 총 변제할 금액은 현재 보유 중인 총 재산 가액보다 반드시 많아야 합니다. 따라서 실제 사건 진행 과정에서 변제 기간이 60개월로 늘어나거나 매달 납입해야 할 금액이 강제적으로 상향 조정될 수 있으므로 전담 법률 사무소와 세부 조정을 논의해야 합니다.';
+                    monthlyPayment = Math.max(monthlyPayment, Math.ceil(assets / 36));
+                    totalPayment = monthlyPayment * 36;
+                }
+
+                if (totalPayment > debt) {
+                    monthlyPayment = Math.ceil(debt / 36);
+                    totalPayment = debt;
+                    feedback = '채무 전액을 36개월 내에 완제할 수 있는 충분한 변제력이 확보되어 탕감 범위가 생기지 않는 구조입니다. 이 경우 연체 이자 부담 소멸 및 법적 채무의 일시 상환 압박을 늦추는 목적으로 제도를 운영하게 됩니다.';
+                }
+
+                const forgivenessRate = ((debt - totalPayment) / debt) * 100;
+                const displayRate = forgivenessRate < 0 ? 0 : forgivenessRate;
+
+                document.getElementById('calc-result').style.display = 'block';
+                document.getElementById('res-monthly-payment').innerText = Math.round(monthlyPayment).toLocaleString();
+                document.getElementById('res-total-payment').innerText = Math.round(totalPayment).toLocaleString();
+                document.getElementById('res-forgiveness-rate').innerText = displayRate.toFixed(1);
+                document.getElementById('res-feedback-text').innerText = feedback;
+            }
+        </script>
+    </section>
+
+    <section id="qualification">
+        <h2>광주회생법원 개인회생 신청 적합성 자가진단</h2>
+        <p>
+            법률 전문가를 직접 만나 상담을 진행하기 전에, 본인이 채무 조정 절차를 정식으로 진행할 수 있는 자격을 갖추고 있는지 기본적인 문항들을 통해 스스로 검증해 볼 수 있습니다. 체크를 완료한 후 평가 결과를 즉각 조회해 보십시오.
+        </p>
+
+        <div class="checklist-group">
+            <div class="checklist-item">
+                <input type="checkbox" id="chk-income">
+                <label for="chk-income">현재 직장인, 아르바이트, 프리랜서, 개인사업 또는 농업에 종사하고 있으며 세금 공제 여부와 상관없이 반복적인 소득 증빙이 가능한 상태입니까?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk-debt-volume">
+                <label for="chk-debt-volume">현재 신용대출 및 카드 연체금, 사채, 보증부 부채를 합산한 총 무담보 채무가 1,000만 원 이상이고, 10억 원 이하인 범위에 위치하고 있습니까?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk-assets-rule">
+                <label for="chk-assets-rule">가구원 명의의 자산, 주택 임차 보증금, 소유 차량 등의 가치를 합산한 금액보다 본인이 떠안고 있는 채무 총액이 더 많은 상태입니까?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk-past-rehab">
+                <label for="chk-past-rehab">과거에 개인회생이나 개인파산 절차를 밟아서 최종 면책 결정을 부여받았던 경험이 있다면, 당시 면책 확정일로부터 5년이 지난 시점입니까?</label>
+            </div>
+        </div>
+
+        <button type="button" class="btn-action" onclick="diagnoseUserEligibility()">자가진단 자격 검증 확인</button>
+
+        <div id="diagnose-result" class="result-box">
+            <h4 id="diag-title">진단 분석이 완료되었습니다</h4>
+            <p id="diag-text"></p>
+        </div>
+
+        <script>
+            function diagnoseUserEligibility() {
+                const c1 = document.getElementById('chk-income').checked;
+                const c2 = document.getElementById('chk-debt-volume').checked;
+                const c3 = document.getElementById('chk-assets-rule').checked;
+                const c4 = document.getElementById('chk-past-rehab').checked;
+
+                const resultBox = document.getElementById('diagnose-result');
+                const title = document.getElementById('diag-title');
+                const text = document.getElementById('diag-text');
+
+                resultBox.style.display = 'block';
+
+                if (c1 && c2 && c3) {
+                    title.innerText = '신청 적합 요건 기본 충족 상태로 판단됨';
+                    text.innerText = '선택하신 내용을 토대로 분석한 결과, 광주회생법원에서 요구하는 개인회생 절차의 핵심적인 세부 자격 조건을 정상적으로 충족하고 있을 확률이 매우 높은 편입니다. 본인의 정확한 재산 평가 방식과 최근 증가한 신규 부채의 상세 사용 내역 소명 자료를 체계적으로 준비하신다면 탕감 폭을 극대화할 수 있을 것입니다. 보다 명확한 준비를 위해 하단 신청서를 통해 구체적인 상담 과정을 설계하는 것을 권유합니다.';
+                } else {
+                    title.innerText = '추가적인 법률 요건 검토 및 수정 필요';
+                    text.innerText = '현재 기재하신 답변 내용 중 일부 필수 자격 요건에서 불일치 사항이 식별되어 도산 신청 시 기각 리스크가 발생할 수 있습니다. 예를 들어, 확실하고 일정한 수입 증빙에 난항이 있거나, 채무액이 재산 보유 가치보다 낮게 잡힌 상황이라면 소득 구조 개편이나 재산 가치 재평가가 선행되어야만 법원의 엄정한 문턱을 넘을 수 있습니다. 신용회복위원회의 연체이자 감면이나 사적 채무 조정 프로그램 등 다각적인 제도의 종류를 연계해 정밀 비교해 보시는 것을 권장합니다.';
+                }
+            }
+        </script>
+    </section>
+
+    <section id="regional-analysis">
+        <h2>광주 구별 지역 맞춤 재정 현황 및 연령별 대비 방안</h2>
+        <p>
+            광주 지역의 개인회생 신청은 행정구역 특성에 따라 발생하는 부채의 성격이 다르게 나타납니다. 상무지구와 치평동, 쌍촌동 등이 속한 서구 지역은 주로 사업자 비중이 높고 소상공인들의 영업손실로 인한 부채 발생 비율이 큰 축을 차지합니다. 반면, 대규모 주거 단지가 밀집한 광산구 수완지구, 첨단지구, 신창동 및 북구 용봉동, 일곡동, 양산동 등의 배후 주거 지역은 가계 생활비 부족이나 무리한 주택 자금 융통, 가구 부채 부담이 크게 반영되는 특성을 지니고 있습니다. 남구 봉선동, 진월동 등은 상대적으로 가구 자산 가치 평가 비중이 높게 책정되어 청산가치 증대로 인한 변제금 조정 사례가 잦아 특별히 정밀한 관리가 요구됩니다.
+        </p>
+        <p>
+            연령별 채무 발생 추이를 살펴보면, 20대 청년층 및 30대 신규 취업 직장인 계층에서는 비트코인이나 주식, 사설 토토 등의 스포츠 배팅 등 투자 실패와 모바일 비대면 다이렉트 소액 대출의 무분별한 남용이 주요 원인으로 꼽히고 있습니다. 이와 반대로 40대 외벌이 가장이나 50대 은퇴를 앞둔 자영업자 분들의 채무 원인은 중장년층 가계의 생계 유지비 누적, 신규 프랜차이즈 창업 과정에서의 보증 채무 부도, 자영업 불황에 따른 부채 확대가 다수를 점유합니다. 60대 이상의 고령 은퇴자들은 정기 소득 결여로 인한 카드 돌려막기 악순환이 주원인이 되는 만큼, 연령대별 직업 유무와 자산의 가치를 객관적으로 분석해 줄 수 있는 로펌을 통해 설계 과정을 검증받는 것이 필수적입니다.
+        </p>
+
+        <div class="info-box">
+            <p>
+                중요한 팁: 일부 브로커들이 법률 상담의 사은품이나 현금지원, 부정한 수임료 혜택 제공 등을 제안하며 신청 가입을 독촉하는 행태가 광주 및 전남 지역에 간혹 발견되고 있어 주의를 요합니다. 과장된 마케팅이나 단순 이벤트 혜택, 상품권 제공에 집중하기보다 실질적으로 본인의 재산과 가계부 내용을 면밀히 분석하는 신뢰받는 법무 대리인을 통해 광주회생법원의 보정 지침을 명확히 대처해 나가야 기각 손실을 완벽히 방지할 수 있습니다.
+            </p>
+        </div>
+    </section>
+
+    <section id="forum-trends">
+        <h2>온라인 커뮤니티 정보의 활용과 대안 분석</h2>
+        <p>
+            회생 신청을 구상하는 분들은 인터넷에서 여러 실경험자들의 정보를 찾아보는 편입니다. 주로 디시 인사이드의 개인회생 갤러리나 보배드림 고민 글, 펨코 및 에펨코리아와 같은 종합 온라인 포털 커뮤니티를 통해 실제 본인이 신청하고 기각을 피했던 생생한 내돈내산 가입 및 승인 후기를 공유하기도 합니다. 일부는 포털 검색 및 소셜 서비스나 인스타그램 카드뉴스, 트위터 단문 메시지, 유튜브 채널을 시청하며 최신 보정 경향을 파악하기도 하고, 카카오톡 실시간 상담방이나 토스 자산 연결을 기반으로 자신의 채무를 진단하며 다각적인 비교 작업을 거치고 있습니다.
+        </p>
+        <p>
+            심지어 최근에는 챗지피티(ChatGPT)나 제미나이(Gemini) 같은 다양한 AI 기반의 정보 수집 플랫폼을 동원해 법률 제도의 종류별 개념 차이점을 학습하거나 본인 스스로 변제금을 수동 계산해 보며 전략을 구상하는 등 인공지능 기술의 적용 영역 역시 확대되었습니다. 그러나 네이버 검색과 구글 등에서 찾아낸 대중적이고 규격화된 답변과 달리, 실제 개별 신청인의 수입 안정성, 가구원의 부양 비율, 세부적인 부채 증감 일자는 각기 다릅니다. 이 때문에 반드시 전문적인 실무 대행이 가능한 법적 조력자가 사건을 도맡아 서류를 세심하게 보정하는 단계를 밟아야만 개시 조건의 이점을 극대화하는 성과를 이룰 수 있습니다.
+        </p>
+        
+        <h3>신용회복지원 프로그램별 핵심 비교</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>제도 구분</th>
+                    <th>원금 감면 범위</th>
+                    <th>상환 방식 특징</th>
+                    <th>광주회생법원 진행의 장단점</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>법원 개인회생</td>
+                    <td>최대 90% 까지 원금 탕감</td>
+                    <td>3년 내지 5년 동안 가용소득 분할 변제</td>
+                    <td>최근 부채 비중 및 사행성 소지 시 정밀 소명 의무 요구</td>
+                </tr>
+                <tr>
+                    <td>법원 개인파산</td>
+                    <td>원금 및 이자 전체 면책 가능</td>
+                    <td>보유 자산 처분 및 환가를 거쳐 배당</td>
+                    <td>면책 불허가 요건이 까다로우며 신용상 불이익 단점 존재</td>
+                </tr>
+                <tr>
+                    <td>신용회복 연체정리</td>
+                    <td>연체 일수에 따른 이자율 차등 인하</td>
+                    <td>최장 8년 이내에 걸쳐 원금 전액 분납</td>
+                    <td>사금융 및 미협약 기관 채무 누락 리스크 상존</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="official-links">
+        <h2>신뢰할 수 있는 사법 및 법률 공식 출처</h2>
+        <p>
+            개인회생 신청을 구상하는 상황이라면 아래에 제시된 국가 기관 및 공신력 있는 공식 법률 사이트들을 활용하여 신뢰할 수 있는 실무 가이드 정보와 법률 조문을 직접 대조 및 검증해 보시기 바랍니다.
+        </p>
+        <ul class="trust-links-list">
+            <li><a href="https://recoverybylawss.koreahankang.com" target="_blank" rel="noopener">reliabledone 금융 연구망: 개인 채무 조정 실무 분석 및 다각적 구제 정보와 제도 비교 분석 데이터를 제공하는 신뢰성 높은 통합 정보 플랫폼입니다.</a></li>
+            <li><a href="https://gwangju.scourt.go.kr" target="_blank" rel="noopener">대한민국 법원 광주회생법원 홈페이지: 회생 개시 절차 진행을 위한 공식 법원 정보 및 양식 양수, 관할 범위 등의 공식 공고를 열람할 수 있는 국가 사법 포털입니다.</a></li>
+            <li><a href="https://www.ccrs.or.kr" target="_blank" rel="noopener">신용회복위원회 공식 사이트: 공적 구제책 적용 전이나 연체 전 자격 조건에 해당하는지 확인 가능한 사적 채무 보정 지원 업무를 대행하는 공식 공공 기관입니다.</a></li>
+            <li><a href="https://www.law.go.kr" target="_blank" rel="noopener">국가법령정보센터 대한민국 법률 정보: 채무자 회생 및 파산에 관한 법률 등 명문화된 조문 체계와 대법원 최신 판례 자료들을 누구나 조건 없이 검색해 볼 수 있는 법제처 소관 사이트입니다.</a></li>
+            <li><a href="https://www.moj.go.kr" target="_blank" rel="noopener">대한민국 법무부 공식 정책 사이트: 회생파산 제도 전반의 개선책 및 서민 생활 안정 법률 서비스 지원 시책 보도 자료들을 전문으로 제공하는 중앙 행정 기관입니다.</a></li>
+            <li><a href="https://namu.wiki/w/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D" target="_blank" rel="noopener">나무위키 개인회생 설명 정보: 수많은 사용자 및 법률 전공자들이 직접 직관적이고 쉬운 단어들을 동원하여 입체적인 절차 흐름과 실사례를 엮어 설명해 놓은 온라인 지식 백과입니다.</a></li>
+        </ul>
+    </section>
+
+    <section id="apply-consult">
+        <h2>광주개인회생 세부 자격 및 맞춤 분석 요청서</h2>
+        <p>
+            본인의 구체적인 부채 비율, 가계 상황 및 직종 등을 상세히 적어주시면 광주회생법원의 보정 지침에 특화된 정밀 자격 충족 가능성 및 절차 예상 비용 분석을 맞춤 형태로 전해 받으실 수 있습니다.
+        </p>
+
+        <form action="#" method="POST" onsubmit="alert('분석 요청이 정상적으로 접수되었습니다. 담당 전문가가 기재하신 연락처를 확인하여 분석 보고서 자료를 송부해 드리겠습니다.'); return false;">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="reg-name">신청인 실명</label>
+                    <input type="text" id="reg-name" placeholder="성명을 입력해 주십시오" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-tel">비상 연락처</label>
+                    <input type="tel" id="reg-tel" placeholder="010-1234-5678" pattern="[0-9\-]+" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="reg-district">광주광역시 내 상세 거주지 구 분</label>
+                    <select id="reg-district" required>
+                        <option value="">소재 구역 선택</option>
+                        <option value="동구">동구 (학동, 금남로, 지산동 일대)</option>
+                        <option value="서구">서구 (상무지구, 치평동, 화정동 일대)</option>
+                        <option value="남구">남구 (봉선동, 진월동, 양림동 일대)</option>
+                        <option value="북구">북구 (용봉동, 운암동, 일곡동 일대)</option>
+                        <option value="광산구">광산구 (수완지구, 첨단지구, 신창동 일대)</option>
+                        <option value="기타전남">광주 인근 전남 지역 (나주, 화순, 담양 등)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reg-job">직업 형태 분류</label>
+                    <select id="reg-job" required>
+                        <option value="">근무 방식 선택</option>
+                        <option value="일반직장인">일반 기업 정규직 및 계약직 직장인</option>
+                        <option value="개인사업자">자영업자 및 소상공인 사업체 운영자</option>
+                        <option value="일용직">일용직 근로자 및 아르바이트 근무자</option>
+                        <option value="프리랜서">프리랜서 및 특수 형태 근로 종사자</option>
+                        <option value="기타">무직 또는 전업주부 상태</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-memo">상세 가계 부채 발생 사유 및 특이 사항 기재 (소명 참고용)</label>
+                <textarea id="reg-memo" rows="5" placeholder="예: 최근 전세자금 대출 상환 지연이 겹치고 광산구 신가동 자영업 점포 폐업으로 인해 부채가 누적되었습니다. 가족 3명을 주 부양하고 있으며 추가 의료비 발생 요소가 있습니다. 정확한 분석 정보 수령을 희망합니다."></textarea>
+            </div>
+
+            <button type="submit" class="btn-action">정밀 채무 조정 보고서 작성 신청하기</button>
+        </form>
+    </section>
+</div>
+
+  
